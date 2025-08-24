@@ -63,7 +63,59 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
+1. 👉 Radios in the same group (name="...") don’t each get a separate Tab stop — they act as a single control.
+You use arrow keys to switch between them. This is expected and correct for accessibility.
 
+
+2. When trying to make the whole box clickable + keyboard accessible so that when it’s selected, the background changes (green) and the radio becomes checked.
+You need to:
+
+- Use peer on the <input type="radio">
+
+- Use peer-checked: variants on the wrapper or label
+
+```
+<fieldset class="query_section">
+  <legend class="flex gap-2 pb-2">
+    Query Type
+    <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+      <use xlink:href="#required"></use>
+    </svg>
+    <span class="sr-only">required</span>
+  </legend>
+
+  <div id="inputs_wrapper" class="grid sm:grid-cols-2 gap-4">
+    <!-- General Enquiry -->
+    <label
+      for="general_enquiry"
+      class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:outline-2 focus-within:outline-[#0c7d69ff]"
+    >
+      <input
+        type="radio"
+        name="query_type"
+        id="general_enquiry"
+        class="peer hidden"
+      />
+      <span>General Enquiry</span>
+    </label>
+
+    <!-- Support Request -->
+    <label
+      for="support_request"
+      class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:outline-2 focus-within:outline-[#0c7d69ff]"
+    >
+      <input
+        type="radio"
+        name="query_type"
+        id="support_request"
+        class="peer hidden"
+      />
+      <span>Support Request</span>
+    </label>
+  </div>
+</fieldset>
+```
+3. accent-[#0c7d69ff] → makes the radio dot green.
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
