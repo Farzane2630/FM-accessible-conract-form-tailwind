@@ -1,0 +1,32 @@
+@import "tailwindcss";
+/* Regular (normal style) */
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900; /* variable weight range */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Italic */
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 100 900; /* variable weight range */
+  font-style: italic;
+  font-display: swap;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: "Karla", sans-serif;
+  font-style: normal;
+}
