@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="min-h-full" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,93 +9,150 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <link href="./output.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet" />
     <script src="index.js" defer></script>
     <title>Frontend Mentor | Contact form</title>
   </head>
-  <body class="flex items-center justify-center p-8 bg-[#dff1e7ff]">
-    <main class=" rounded-lg w-[90%] p-8 gap-4 bg-white">
-      <h1 class="form_title text-2xl font-semibold text-[#2b4246ff]">Contact Us</h1>
-      <form action="" class="contact_form" novalidate>
-        <div class="name_section">
-          <label for="first_name">First Name <svg class="w-2 h-2" focusable="false"><use xlink:href="#required"></use></svg>
-          <div class="hidden">
-        required
-      </div>
-          </label>
-          <input required type="text" name="first_name" id="first_name" />
-
-          <label for="last_name">Last Name <svg class="w-2 h-2" focusable="false"><use xlink:href="#required"></use></svg>
-          <div class="hidden">
-        required
-      </div>
-          </label>
-          <input required type="text" name="last_name" id="last_name" />
+  <body class="flex items-center justify-center h-full w-full bg-[#dff1e7ff]">
+    <main
+      class="rounded-lg sm:min-w-[90%] max-w-[40em] p-8 grid gap-4 bg-white"
+    >
+      <h1 class="text-2xl font-semibold text-[#2b4246ff]">Contact Us</h1>
+      <form action="" class="grid gap-8 text-[#87a3a6ff]" novalidate>
+        <div id="name_section" class="grid gap-4 sm:grid-cols-2">
+          <fieldset class="grid gap-1">
+            <label class="flex gap-2" for="first_name"
+              >First Name
+              <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+                <use xlink:href="#required"></use>
+              </svg>
+              <div class="sr-only">required</div>
+            </label>
+            <input
+              class="border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 w-full rounded-lg h-12"
+              autocomplete="given-name"
+              type="text"
+              name="first_name"
+              id="first_name"
+            />
+          </fieldset>
+          <fieldset class="grid gap-1">
+            <label class="flex gap-2" for="last_name"
+              >Last Name
+              <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+                <use xlink:href="#required"></use>
+              </svg>
+              <div class="sr-only">required</div>
+            </label>
+            <input
+              class="border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 w-full rounded-lg h-12"
+              autocomplete="family-name"
+              type="text"
+              name="last_name"
+              id="last_name"
+            />
+          </fieldset>
         </div>
         <div class="email_section">
-          <label for="email">Email Address <svg class="w-2 h-2" focusable="false"><use xlink:href="#required"></use></svg>
-          <div class="hidden">
-        required
-      </div>
+          <label class="w-full flex gap-2" for="email"
+            >Email Address
+            <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+              <use xlink:href="#required"></use>
+            </svg>
+            <div class="sr-only">required</div>
           </label>
-          <input required type="email" name="email" id="email" />
+          <input
+            class="border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 w-full rounded-lg h-12"
+            type="email"
+            name="email"
+            id="email"
+          />
         </div>
+        <fieldset class="query_section">
+  <legend class="flex gap-2 pb-2">
+    Query Type
+    <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+      <use xlink:href="#required"></use>
+    </svg>
+    <span class="sr-only">required</span>
+  </legend>
 
-        <div class="query_section">
-          <p class="title">Query Type <svg class="w-2 h-2" focusable="false"><use xlink:href="#required"></use></svg>
-          <div class="hidden">
-        required
-      </div>
-          </p>
-          <input
-          required
-            type="radio"
-            name="general_enquiry"
-            id="general_enquiry"
-          />
-          <label for="general_enquiry">General Enquiry</label>
-          <input
-            required
-            type="radio"
-            name="support_request"
-            id="support_request"
-          />
-          <label for="support_request">Support Request</label>
-        </div>
-        <div class="message_section">
-          <label for="message">Message <svg class="w-2 h-2" focusable="false"><use xlink:href="#required"></use></svg>
-            <div class="hidden">
-        required
-      </div>
+  <div id="inputs_wrapper" class="grid sm:grid-cols-2 gap-4">
+    <!-- General Enquiry -->
+    <label
+      for="general_enquiry"
+      class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
+    >
+      <input
+        type="radio"
+        name="query_type"
+        id="general_enquiry"
+        class="peer accent-[#0c7d69ff]"
+      />
+      <span>General Enquiry</span>
+    </label>
+
+    <!-- Support Request -->
+    <label
+      for="support_request"
+      class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
+    >
+      <input
+        type="radio"
+        name="query_type"
+        id="support_request"
+        class="peer accent-[#0c7d69ff]"
+      />
+      <span>Support Request</span>
+    </label>
+  </div>
+</fieldset>
+
+        <fieldset class="message_section">
+          <label class="w-full flex gap-2" for="message"
+            >Message
+            <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+              <use xlink:href="#required"></use>
+            </svg>
+            <div class="sr-only">required</div>
           </label>
-          <textarea required name="message" id="message"></textarea>
-        </div>
+          <textarea
+            id="message"
+            class="w-full h-[10em] rounded-xl border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 p-4"
+            name="message"
+            id="message"
+          ></textarea>
+        </fieldset>
 
-        <div class="consent_section">
-          <input required type="checkbox" name="consent" id="consent" />
-          <label for="consent"
-          >I consent to being contacted by the team To submit this form,
-            please consent to being contacted <svg class="w-2 h-2" focusable="false"><use xlink:href="#required"></use></svg>
-            <div class="hidden">
-        required
-      </div>
-            </label
-          >
-        </div>
+        <fieldset class="consent_section flex items-center gap-2">
+          <input class="accent-[#0c7d69ff]" type="checkbox" name="consent" id="consent" />
+          <label class="w-full flex gap-2" for="consent"
+            >I consent to being contacted by the team
+            <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+              <use xlink:href="#required"></use>
+            </svg>
+            <div class="sr-only">required</div>
+          </label>
+        </fieldset>
 
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          class="w-full bg-[#0c7d69ff] text-white py-4 font-medium rounded-xl"
+        >
+          Submit
+        </button>
       </form>
     </main>
 
     <!-- First Name
-  This field is required
+  This field is
 
   Last Name
-  This field is required
+  This field is
 
   Email Address
   Please enter a valid email address
-  This field is required
+  This field is
 
   Query Type
   General Enquiry
@@ -103,7 +160,7 @@
   Please select a query type
 
   Message
-  This field is required
+  This field is
 
   I consent to being contacted by the team
   To submit this form, please consent to being contacted
@@ -113,11 +170,13 @@
   Message Sent!
   Thanks for completing the form. We'll be in touch soon!
   -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-  <symbol id="required" viewBox="0 0 128 128">
-   <path d="M110.1,16.4L75.8,56.8l0.3,1l50.6-10.2v32.2l-50.9-8.9l-0.3,1l34.7,39.1l-28.3,16.5L63.7,78.2L63,78.5l-18.5,49L17.2,111
-     l34.1-39.8v-0.6l-50,9.2V47.6l49.3,9.9l0.3-0.6L17.2,16.7L45.5,0.5l17.8,48.7H64L82.1,0.5L110.1,16.4z"/>
-  </symbol>
-  </svg>
-</body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="required" viewBox="0 0 128 128">
+        <path
+          d="M110.1,16.4L75.8,56.8l0.3,1l50.6-10.2v32.2l-50.9-8.9l-0.3,1l34.7,39.1l-28.3,16.5L63.7,78.2L63,78.5l-18.5,49L17.2,111
+     l34.1-39.8v-0.6l-50,9.2V47.6l49.3,9.9l0.3-0.6L17.2,16.7L45.5,0.5l17.8,48.7H64L82.1,0.5L110.1,16.4z"
+        />
+      </symbol>
+    </svg>
+  </body>
 </html>

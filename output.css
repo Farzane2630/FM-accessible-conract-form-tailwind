@@ -7,11 +7,17 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-300: oklch(87.9% 0.169 91.605);
+    --color-white: #fff;
     --spacing: 0.25rem;
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-extralight: 200;
+    --font-weight-light: 300;
+    --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -165,6 +171,17 @@
   }
 }
 @layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
   .static {
     position: static;
   }
@@ -174,17 +191,71 @@
   .flex {
     display: flex;
   }
+  .grid {
+    display: grid;
+  }
   .hidden {
     display: none;
+  }
+  .table {
+    display: table;
+  }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+  .h-1\.5 {
+    height: calc(var(--spacing) * 1.5);
   }
   .h-2 {
     height: calc(var(--spacing) * 2);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-20 {
+    height: calc(var(--spacing) * 20);
+  }
+  .h-\[10em\] {
+    height: 10em;
+  }
+  .h-full {
+    height: 100%;
+  }
+  .min-h-8 {
+    min-height: calc(var(--spacing) * 8);
+  }
+  .min-h-12 {
+    min-height: calc(var(--spacing) * 12);
+  }
+  .min-h-\[10em\] {
+    min-height: 10em;
+  }
+  .min-h-full {
+    min-height: 100%;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
+  }
+  .w-1\.5 {
+    width: calc(var(--spacing) * 1.5);
+  }
   .w-2 {
     width: calc(var(--spacing) * 2);
   }
-  .w-\[90\%\] {
-    width: 90%;
+  .w-full {
+    width: 100%;
+  }
+  .max-w-\[40em\] {
+    max-width: 40em;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .resize {
+    resize: both;
   }
   .items-center {
     align-items: center;
@@ -192,14 +263,68 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-start {
+    justify-content: flex-start;
+  }
+  .gap-1 {
+    gap: calc(var(--spacing) * 1);
+  }
+  .gap-2 {
+    gap: calc(var(--spacing) * 2);
+  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-8 {
+    gap: calc(var(--spacing) * 8);
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-1 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-\[\#2b4246ff\] {
+    border-color: #2b4246ff;
+  }
+  .border-\[\#87a3a6ff\] {
+    border-color: #87a3a6ff;
+  }
+  .border-\[\#dff1e7ff\] {
+    border-color: #dff1e7ff;
+  }
+  .bg-\[\#0c7d69ff\] {
+    background-color: #0c7d69ff;
+  }
+  .bg-\[\#2b4246ff\] {
+    background-color: #2b4246ff;
+  }
   .bg-\[\#dff1e7ff\] {
     background-color: #dff1e7ff;
+  }
+  .bg-amber-300 {
+    background-color: var(--color-amber-300);
+  }
+  .bg-white {
+    background-color: var(--color-white);
+  }
+  .fill-\[\#0c7d69ff\] {
+    fill: #0c7d69ff;
+  }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -207,9 +332,22 @@
   .p-8 {
     padding: calc(var(--spacing) * 8);
   }
+  .px-4 {
+    padding-inline: calc(var(--spacing) * 4);
+  }
+  .py-4 {
+    padding-block: calc(var(--spacing) * 4);
+  }
+  .pb-2 {
+    padding-bottom: calc(var(--spacing) * 2);
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .font-medium {
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
   }
   .font-semibold {
     --tw-font-weight: var(--font-weight-semibold);
@@ -218,9 +356,137 @@
   .text-\[\#2b4246ff\] {
     color: #2b4246ff;
   }
+  .text-\[\#87a3a6ff\] {
+    color: #87a3a6ff;
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .accent-\[\#0c7d69ff\] {
+    accent-color: #0c7d69ff;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .outline-1 {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+  .outline-\[\#0c7d69ff\] {
+    outline-color: #0c7d69ff;
+  }
+  .outline-\[\#87a3a6ff\] {
+    outline-color: #87a3a6ff;
+  }
+  .peer-checked\:bg-\[\#dff1e7ff\] {
+    &:is(:where(.peer):checked ~ *) {
+      background-color: #dff1e7ff;
+    }
+  }
+  .peer-checked\:bg-amber-300 {
+    &:is(:where(.peer):checked ~ *) {
+      background-color: var(--color-amber-300);
+    }
+  }
+  .peer-hover\:bg-\[\#dff1e7ff\] {
+    &:is(:where(.peer):hover ~ *) {
+      @media (hover: hover) {
+        background-color: #dff1e7ff;
+      }
+    }
+  }
+  .checked\:bg-\[\#0c7d69ff\] {
+    &:checked {
+      background-color: #0c7d69ff;
+    }
+  }
+  .checked\:bg-\[\#dff1e7ff\] {
+    &:checked {
+      background-color: #dff1e7ff;
+    }
+  }
+  .checked\:bg-amber-300 {
+    &:checked {
+      background-color: var(--color-amber-300);
+    }
+  }
+  .checked\:fill-\[\#0c7d69ff\] {
+    &:checked {
+      fill: #0c7d69ff;
+    }
+  }
+  .focus-within\:bg-\[\#dff1e7ff\] {
+    &:focus-within {
+      background-color: #dff1e7ff;
+    }
+  }
+  .focus-within\:outline {
+    &:focus-within {
+      outline-style: var(--tw-outline-style);
+      outline-width: 1px;
+    }
+  }
+  .focus-within\:outline-2 {
+    &:focus-within {
+      outline-style: var(--tw-outline-style);
+      outline-width: 2px;
+    }
+  }
+  .focus-within\:outline-\[\#0c7d69ff\] {
+    &:focus-within {
+      outline-color: #0c7d69ff;
+    }
+  }
+  .focus\:border-\[\#0c7d69ff\] {
+    &:focus {
+      border-color: #0c7d69ff;
+    }
+  }
+  .focus\:bg-\[\#dff1e7ff\] {
+    &:focus {
+      background-color: #dff1e7ff;
+    }
+  }
+  .focus\:outline {
+    &:focus {
+      outline-style: var(--tw-outline-style);
+      outline-width: 1px;
+    }
+  }
+  .focus\:outline-2 {
+    &:focus {
+      outline-style: var(--tw-outline-style);
+      outline-width: 2px;
+    }
+  }
+  .focus\:outline-\[\#0c7d69ff\] {
+    &:focus {
+      outline-color: #0c7d69ff;
+    }
+  }
+  .active\:bg-\[\#dff1e7ff\] {
+    &:active {
+      background-color: #dff1e7ff;
+    }
+  }
+  .aria-selected\:bg-\[\#dff1e7ff\] {
+    &[aria-selected="true"] {
+      background-color: #dff1e7ff;
+    }
+  }
+  .sm\:min-w-\[90\%\] {
+    @media (width >= 40rem) {
+      min-width: 90%;
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 }
 @font-face {
@@ -241,8 +507,13 @@
   box-sizing: border-box;
 }
 html, body {
-  min-height: 100vh;
-  font-family: "Karla";
+  font-family: "Karla", sans-serif;
+  font-style: normal;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -256,6 +527,7 @@ html, body {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-outline-style: solid;
     }
