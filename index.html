@@ -13,14 +13,14 @@
     <script src="index.js" defer></script>
     <title>Frontend Mentor | Contact form</title>
   </head>
-  <body class="flex items-center justify-center h-full w-full bg-[#dff1e7ff]">
+  <body class="flex items-center justify-center min-h-full w-full bg-[#dff1e7ff] p-12">
     <main
-      class="rounded-lg sm:min-w-[90%] max-w-[40em] p-8 grid gap-4 bg-white"
+      class="rounded-lg sm:max-w-[35em] p-8 grid gap-4 bg-white"
     >
       <h1 class="text-2xl font-semibold text-[#2b4246ff]">Contact Us</h1>
-      <form action="" class="grid gap-8 text-[#2b4246ff]" novalidate>
+      <form class="grid gap-8 text-[#2b4246ff]" novalidate>
         <div id="name_section" class="grid gap-4 sm:grid-cols-2">
-          <fieldset class="grid gap-1">
+          <div class="grid gap-1">
             <label class="flex gap-2" for="first_name"
               >First Name
               <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
@@ -29,14 +29,14 @@
               <div class="sr-only">required</div>
             </label>
             <input
-              class="border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 w-full rounded-lg h-12"
+              class="border ps-2 border-[#87a3a6ff] focus:outline-[#0c7d69ff] w-full rounded-lg h-12"
               autocomplete="given-name"
               type="text"
               name="first_name"
               id="first_name"
             />
-          </fieldset>
-          <fieldset class="grid gap-1">
+          </div>
+          <div class="grid gap-1">
             <label class="flex gap-2" for="last_name"
               >Last Name
               <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
@@ -45,13 +45,13 @@
               <div class="sr-only">required</div>
             </label>
             <input
-              class="border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 w-full rounded-lg h-12"
+              class="border ps-2 border-[#87a3a6ff] focus:outline-[#0c7d69ff] w-full rounded-lg h-12"
               autocomplete="family-name"
               type="text"
               name="last_name"
               id="last_name"
             />
-          </fieldset>
+          </div>
         </div>
         <div class="email_section">
           <label class="w-full flex gap-2" for="email"
@@ -62,53 +62,54 @@
             <div class="sr-only">required</div>
           </label>
           <input
-            class="border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 w-full rounded-lg h-12"
+            class="border ps-2 border-[#87a3a6ff] focus:outline-[#0c7d69ff] w-full rounded-lg h-12"
             type="email"
             name="email"
             id="email"
           />
         </div>
+
         <fieldset class="query_section">
-  <legend class="flex gap-2 pb-2">
-    Query Type
-    <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
-      <use xlink:href="#required"></use>
-    </svg>
-    <span class="sr-only">required</span>
-  </legend>
+          <legend class="flex gap-2 pb-2">
+            Query Type
+            <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
+              <use xlink:href="#required"></use>
+            </svg>
+            <span class="sr-only">required</span>
+          </legend>
 
-  <div id="inputs_wrapper" class="grid sm:grid-cols-2 gap-4">
-    <!-- General Enquiry -->
-    <label
-      for="general_enquiry"
-      class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
-    >
-      <input
-        type="radio"
-        name="query_type"
-        id="general_enquiry"
-        class="peer accent-[#0c7d69ff]"
-      />
-      <span>General Enquiry</span>
-    </label>
+          <div id="inputs_wrapper" class="grid sm:grid-cols-2 gap-4">
+            <!-- General Enquiry -->
+            <label
+              for="general_enquiry"
+              class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
+            >
+              <input
+                type="radio"
+                name="query_type"
+                id="general_enquiry"
+                class="peer accent-[#0c7d69ff]"
+              />
+              <span>General Enquiry</span>
+            </label>
 
-    <!-- Support Request -->
-    <label
-      for="support_request"
-      class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
-    >
-      <input
-        type="radio"
-        name="query_type"
-        id="support_request"
-        class="peer accent-[#0c7d69ff]"
-      />
-      <span>Support Request</span>
-    </label>
-  </div>
-</fieldset>
+            <!-- Support Request -->
+            <label
+              for="support_request"
+              class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
+            >
+              <input
+                type="radio"
+                name="query_type"
+                id="support_request"
+                class="peer accent-[#0c7d69ff]"
+              />
+              <span>Support Request</span>
+            </label>
+          </div>
+        </fieldset>
 
-        <fieldset class="message_section">
+        <div class="message_section">
           <label class="w-full flex gap-2" for="message"
             >Message
             <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
@@ -117,15 +118,19 @@
             <div class="sr-only">required</div>
           </label>
           <textarea
-            id="message"
-            class="w-full h-[10em] rounded-xl border-1 border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 p-4"
+            class="w-full h-[10em] rounded-xl border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 p-4"
             name="message"
             id="message"
           ></textarea>
-        </fieldset>
+        </div>
 
-        <fieldset class="consent_section flex items-center gap-2">
-          <input class="accent-[#0c7d69ff]" type="checkbox" name="consent" id="consent" />
+        <div class="consent_section flex items-center gap-2">
+          <input
+            class="accent-[#0c7d69ff]"
+            type="checkbox"
+            name="consent"
+            id="consent"
+          />
           <label class="w-full flex gap-2" for="consent"
             >I consent to being contacted by the team
             <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
@@ -133,7 +138,7 @@
             </svg>
             <div class="sr-only">required</div>
           </label>
-        </fieldset>
+        </div>
 
         <button
           type="submit"
