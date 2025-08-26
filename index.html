@@ -13,12 +13,12 @@
     <script src="index.js" defer></script>
     <title>Frontend Mentor | Contact form</title>
   </head>
-  <body class="flex items-center justify-center min-h-full w-full bg-[#dff1e7ff] p-12">
-    <main
-      class="rounded-lg sm:max-w-[35em] p-8 grid gap-4 bg-white"
-    >
+  <body
+    class="flex items-center justify-center min-h-full w-full bg-[#dff1e7ff] p-12"
+  >
+    <main class="rounded-lg sm:max-w-[35em] p-8 grid gap-4 bg-white">
       <h1 class="text-2xl font-semibold text-[#2b4246ff]">Contact Us</h1>
-      <form class="grid gap-8 text-[#2b4246ff]" novalidate>
+      <form id="form" action="#" class="grid gap-8 text-[#2b4246ff]" novalidate>
         <div id="name_section" class="grid gap-4 sm:grid-cols-2">
           <div class="grid gap-1">
             <label class="flex gap-2" for="first_name"
@@ -29,12 +29,20 @@
               <div class="sr-only">required</div>
             </label>
             <input
+              required
               class="border ps-2 border-[#87a3a6ff] focus:outline-[#0c7d69ff] w-full rounded-lg h-12"
               autocomplete="given-name"
               type="text"
               name="first_name"
               id="first_name"
             />
+            <div
+              aria-live="polite"
+              id="first_name_error"
+              class="errorMsg hidden text-red-600"
+            >
+              <span> This field is required </span>
+            </div>
           </div>
           <div class="grid gap-1">
             <label class="flex gap-2" for="last_name"
@@ -45,12 +53,21 @@
               <div class="sr-only">required</div>
             </label>
             <input
+              required
               class="border ps-2 border-[#87a3a6ff] focus:outline-[#0c7d69ff] w-full rounded-lg h-12"
               autocomplete="family-name"
               type="text"
               name="last_name"
               id="last_name"
             />
+            <div
+              aria-live="polite"
+              id="last_name_error"
+              class="errorMsg hidden text-red-600"
+            >
+              <span> This field is required </span>
+            </div>
+          </div>
           </div>
         </div>
         <div class="email_section">
@@ -62,11 +79,20 @@
             <div class="sr-only">required</div>
           </label>
           <input
+            required
             class="border ps-2 border-[#87a3a6ff] focus:outline-[#0c7d69ff] w-full rounded-lg h-12"
             type="email"
             name="email"
             id="email"
           />
+          <div
+              aria-live="polite"
+              id="email_error"
+              class="errorMsg hidden text-red-600"
+            >
+              <span> Please enter a valid email address </span>
+            </div>
+          </div>
         </div>
 
         <fieldset class="query_section">
@@ -85,6 +111,7 @@
               class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
             >
               <input
+                required
                 type="radio"
                 name="query_type"
                 id="general_enquiry"
@@ -107,6 +134,11 @@
               <span>Support Request</span>
             </label>
           </div>
+          <div aria-live="polite" id="query_type_error" class="errorMsg hidden text-red-600"
+            >
+            <span>Please select a query type</span>
+            </div
+          >
         </fieldset>
 
         <div class="message_section">
@@ -118,14 +150,20 @@
             <div class="sr-only">required</div>
           </label>
           <textarea
+            required
             class="w-full h-[10em] rounded-xl border-[#87a3a6ff] focus:outline-[#0c7d69ff] outline-1 p-4"
             name="message"
             id="message"
           ></textarea>
+          <div aria-live="polite" id="message_error" class="errorMsg hidden text-red-600"
+            >
+            <span>This field is required</span></div
+          >
         </div>
 
         <div class="consent_section flex items-center gap-2">
           <input
+            required
             class="accent-[#0c7d69ff]"
             type="checkbox"
             name="consent"
@@ -139,42 +177,23 @@
             <div class="sr-only">required</div>
           </label>
         </div>
+        <div aria-live="polite" id="consent_error" class="errorMsg hidden text-red-600"
+          >
+          <span>
+To submit this form, please consent to being contacted
+          </span></div
+        >
 
         <button
           type="submit"
-          class="w-full bg-[#0c7d69ff] text-white py-4 font-medium rounded-xl"
+          class="w-full cursor-pointer bg-[#0c7d69ff] text-white py-4 font-medium rounded-xl"
         >
           Submit
         </button>
       </form>
     </main>
 
-    <!-- First Name
-  This field is
-
-  Last Name
-  This field is
-
-  Email Address
-  Please enter a valid email address
-  This field is
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-  
-  Submit
-  
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  -->
+    <!-- asteriks icon svg -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
       <symbol id="required" viewBox="0 0 128 128">
         <path
