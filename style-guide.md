@@ -15,7 +15,7 @@ The designs were created to the following widths:
 
 - Green 200 (lighter): #dff1e7ff
 - Green 600 (medium): #0c7d69ff
-- Red: hsl(0, 66%, 54%)
+- Red: #ff3939
 
 ### Neutral
 

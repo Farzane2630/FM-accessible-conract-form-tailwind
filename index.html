@@ -14,11 +14,19 @@
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body
-    class="flex items-center justify-center min-h-full w-full bg-[#dff1e7ff] p-12"
+    class="flex items-center flex-col justify-center min-h-full w-full bg-[#dff1e7ff] p-12 relative"
   >
+
+  <div id="success-message" class="bg-[#2b4246ff] rounded-lg sm:max-w-[25em] p-4 gap-2 text-start absolute top-2 hidden">
+    <section class="title flex items-center gap-2">
+      <img src="./assets/images/icon-success-check.svg">
+      <h2 class="text-lg font-semibold text-white">Message Sent!</h2>
+    </section>
+    <p class="text-white">Thanks for completing the form. We'll be in touch soon!</p>
+  </div>
     <main class="rounded-lg sm:max-w-[35em] p-8 grid gap-4 bg-white">
       <h1 class="text-2xl font-semibold text-[#2b4246ff]">Contact Us</h1>
-      <form id="form" action="#" class="grid gap-8 text-[#2b4246ff]" novalidate>
+      <form id="form" action="#" class="grid gap-4 text-[#2b4246ff]" novalidate>
         <div id="name_section" class="grid gap-4 sm:grid-cols-2">
           <div class="grid gap-1">
             <label class="flex gap-2" for="first_name"
@@ -39,7 +47,7 @@
             <div
               aria-live="polite"
               id="first_name_error"
-              class="errorMsg hidden text-red-600"
+              class="errorMsg hidden text-[#ff3939]"
             >
               <span> This field is required </span>
             </div>
@@ -63,7 +71,7 @@
             <div
               aria-live="polite"
               id="last_name_error"
-              class="errorMsg hidden text-red-600"
+              class="errorMsg hidden text-[#ff3939]"
             >
               <span> This field is required </span>
             </div>
@@ -88,7 +96,7 @@
           <div
               aria-live="polite"
               id="email_error"
-              class="errorMsg hidden text-red-600"
+              class="errorMsg hidden text-[#ff3939]"
             >
               <span> Please enter a valid email address </span>
             </div>
@@ -134,7 +142,7 @@
               <span>Support Request</span>
             </label>
           </div>
-          <div aria-live="polite" id="query_type_error" class="errorMsg hidden text-red-600"
+          <div aria-live="polite" id="query_type_error" class="errorMsg hidden text-[#ff3939]"
             >
             <span>Please select a query type</span>
             </div
@@ -155,7 +163,7 @@
             name="message"
             id="message"
           ></textarea>
-          <div aria-live="polite" id="message_error" class="errorMsg hidden text-red-600"
+          <div aria-live="polite" id="message_error" class="errorMsg hidden text-[#ff3939]"
             >
             <span>This field is required</span></div
           >
@@ -177,7 +185,7 @@
             <div class="sr-only">required</div>
           </label>
         </div>
-        <div aria-live="polite" id="consent_error" class="errorMsg hidden text-red-600"
+        <div aria-live="polite" id="consent_error" class="errorMsg hidden text-[#ff3939]"
           >
           <span>
 To submit this form, please consent to being contacted

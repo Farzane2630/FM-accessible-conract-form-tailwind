@@ -6,8 +6,7 @@ const queryTypes = document.querySelectorAll("[name='query_type']");
 const message = document.querySelector("#message");
 const consent = document.querySelector("#consent");
 const errorMsgs = document.querySelectorAll(".errorMsg");
-
-console.log(form);
+const SuccessMsg = document.querySelector("#success-message");
 
 const isEmailValid = () => {
   const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -59,5 +58,15 @@ const isFormValid = () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   // Handle form submission
-  isFormValid() && alert("Form submitted successfully!");
+  if (isFormValid()) {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    SuccessMsg.classList.remove("hidden");
+    SuccessMsg.classList.add("grid");
+    form.reset();
+
+    setTimeout(() => {
+      SuccessMsg.classList.add("hidden");
+      SuccessMsg.classList.remove("grid");
+    }, 3000);
+  }
 });
