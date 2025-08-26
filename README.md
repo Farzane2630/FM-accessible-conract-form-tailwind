@@ -116,6 +116,70 @@ You need to:
 </fieldset>
 ```
 3. accent-[#0c7d69ff] → makes the radio dot green.
+
+4. Key Accessibility Point: aria-live
+
+Screen readers don’t automatically announce content that appears dynamically (like error messages after form validation).
+
+If you wrap error messages in a container with aria-live="polite", the screen reader will announce them when they appear.
+
+"polite" means: wait until the user has finished speaking before reading the message (so it’s not disruptive).
+
+🛠 Example: 
+
+```
+    <!-- Error message container (hidden initially) -->
+    <div id="email_error" class="error" aria-live="polite"></div>
+  </div>
+```
+
+```
+<script>
+  const form = document.getElementById("contact_form");
+  const emailInput = document.getElementById("email");
+  const emailError = document.getElementById("email_error");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // stop form for demo
+    emailError.textContent = ""; // reset
+
+    if (!emailInput.value) {
+      emailError.textContent = "Email address is required.";
+      emailInput.setAttribute("aria-invalid", "true");
+    } else if (!emailInput.validity.valid) {
+      emailError.textContent = "Please enter a valid email address.";
+      emailInput.setAttribute("aria-invalid", "true");
+    } else {
+      emailInput.removeAttribute("aria-invalid");
+      alert("Form submitted!");
+    }
+  });
+</script>
+```
+
+📌 Key Accessibility Points
+
+aria-live="polite" → announces the error text when it appears.
+
+aria-invalid="true" → tells assistive tech the field is currently invalid.
+
+✅ Result:
+
+Sighted users see red text (once you style .error { color: red; }).
+
+Screen reader users hear the message when it appears.
+
+5. To check if form is valid: 
+
+! use case of "some" method !
+
+const isFormValid = () => {
+  showError();
+  return !Array.from(errorMsgs).some(
+    (err) => !err.classList.contains("hidden")
+  );
+};
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
