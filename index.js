@@ -23,18 +23,22 @@ const showError = () => {
     if (email.validity.valueMissing || !isEmailValid()) {
       email.setAttribute("aria-invalid", true);
       err.id === "email_error" && err.classList.remove("hidden");
+      email.classList.add("border-[#f25f3cff]")
     }
     if (firstName.validity.valueMissing) {
       firstName.setAttribute("aria-invalid", true);
       err.id === "first_name_error" && err.classList.remove("hidden");
+      firstName.classList.add("border-[#f25f3cff]")
     }
     if (lastName.validity.valueMissing) {
       lastName.setAttribute("aria-invalid", true);
       err.id === "last_name_error" && err.classList.remove("hidden");
+      lastName.classList.add("border-[#f25f3cff]")
     }
     if (message.validity.valueMissing) {
       message.setAttribute("aria-invalid", true);
       err.id === "message_error" && err.classList.remove("hidden");
+      message.classList.add("border-[#f25f3cff]")
     }
 
     if (!consent.validity.valid) {

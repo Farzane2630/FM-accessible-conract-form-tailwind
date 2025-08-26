@@ -320,8 +320,18 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-\[\#0c7d69ff\] {
+    border-color: #0c7d69ff;
+  }
   .border-\[\#87a3a6ff\] {
     border-color: #87a3a6ff;
+  }
+  .border-\[\#f25f3cff\] {
+    border-color: #f25f3cff;
   }
   .bg-\[\#0c7d69ff\] {
     background-color: #0c7d69ff;
