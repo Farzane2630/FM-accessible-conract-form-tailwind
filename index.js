@@ -98,12 +98,12 @@ form.addEventListener("submit", (event) => {
 
   if (isFormValid()) {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    successMsg.classList.remove("invisible");
+    successMsg.classList.remove("hidden");
     successMsg.classList.add("grid");
     form.reset();
 
     setTimeout(() => {
-      successMsg.classList.add("invisible");
+      successMsg.classList.add("hidden");
       successMsg.classList.remove("grid");
     }, 3000);
   }
