@@ -34,18 +34,17 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+![Image](https://github.com/user-attachments/assets/51ad5097-b6ae-4676-be07-b3d1b7f66cd1)
+<img width="520" height="931" alt="Image" src="https://github.com/user-attachments/assets/0df3c54c-dceb-4f83-987d-0c5cbbf96e94" />
+<img width="520" height="955" alt="Image" src="https://github.com/user-attachments/assets/6c36411d-95d1-4c96-8067-c4841aceb98f" />
+<img width="520" height="1123" alt="Image" src="https://github.com/user-attachments/assets/49477398-8c4a-45cb-be8d-55c8d3e0bb14" />
+<img width="1314" height="781" alt="Image" src="https://github.com/user-attachments/assets/3b1e703a-c5aa-45b3-9fe0-26088735c995" />
+<img width="1314" height="781" alt="Image" src="https://github.com/user-attachments/assets/51d50f21-0ff6-44ad-a40f-ce8db34e9655" />
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL:](https://your-solution-url.com)
+- [Live Site URL:](https://fm-accessible-conract-form-tailwind.vercel.app/)
 
 ## My process
 
@@ -56,14 +55,13 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Tailwindcss
+- Javascript
 
 
 ### What I learned
 
-1. 👉 Radios in the same group (name="...") don’t each get a separate Tab stop — they act as a single control.
+1. Radios in the same group (name="...") don’t each get a separate Tab stop — they act as a single control.
 You use arrow keys to switch between them. This is expected and correct for accessibility.
 
 
@@ -204,22 +202,18 @@ So instead of looping over the keys, you’re looping over the values directly.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Storing and transforming data using api
 
 ### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Farzaneh Kazemi](https://verdant-bienenstitch-220a6d.netlify.app/)
+- Frontend Mentor - [@Farzane2630](https://www.frontendmentor.io/profile/Farzane2630)
+- StackOverflow - [@farzane-kazemi](https://stackoverflow.com/users/19888516/farzane-kazemi)
 
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
 
