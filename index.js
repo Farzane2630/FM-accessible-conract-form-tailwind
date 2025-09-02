@@ -67,11 +67,11 @@ const showError = () => {
     const valid = validate(input);
 
     if (!valid) {
-      error.classList.remove("hidden");
+      error.classList.remove("invisible");
       input?.classList?.add("error-border");
       input?.setAttribute?.("aria-invalid", true);
     } else {
-      error.classList.add("hidden");
+      error.classList.add("invisible");
       input?.classList?.remove("error-border");
       input?.removeAttribute?.("aria-invalid");
     }
@@ -98,12 +98,12 @@ form.addEventListener("submit", (event) => {
 
   if (isFormValid()) {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    successMsg.classList.remove("hidden");
+    successMsg.classList.remove("invisible");
     successMsg.classList.add("grid");
     form.reset();
 
     setTimeout(() => {
-      successMsg.classList.add("hidden");
+      successMsg.classList.add("invisible");
       successMsg.classList.remove("grid");
     }, 3000);
   }
