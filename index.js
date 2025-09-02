@@ -5,7 +5,6 @@ const email = document.querySelector("#email");
 const queryTypes = document.querySelectorAll("[name='query_type']");
 const message = document.querySelector("#message");
 const consent = document.querySelector("#consent");
-const errorMsgs = document.querySelectorAll(".errorMsg");
 const successMsg = document.querySelector("#success-message");
 
 const isEmailValid = () => {
