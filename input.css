@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 /* Regular (normal style) */
 @font-face {
   font-family: "Karla";
@@ -29,3 +30,9 @@ body {
   font-family: "Karla", sans-serif;
   font-style: normal;
 }
+
+.error-border {
+  border: 1px solid #f25f3c;
+  outline: none;
+}
+

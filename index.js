@@ -6,7 +6,7 @@ const queryTypes = document.querySelectorAll("[name='query_type']");
 const message = document.querySelector("#message");
 const consent = document.querySelector("#consent");
 const errorMsgs = document.querySelectorAll(".errorMsg");
-const SuccessMsg = document.querySelector("#success-message");
+const successMsg = document.querySelector("#success-message");
 
 const isEmailValid = () => {
   const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -17,60 +17,94 @@ const isQueryTypeSelected = () => {
   return Array.from(queryTypes).some((input) => input.checked);
 };
 
+/*
+
+🔥 Why this version is stronger
+
+A. Validation is data-driven → no giant if/else chain.
+
+B. Separation of concerns → isFormValid = logic, showError = UI.
+
+C. Extendable → Adding a new field = just add an entry in validations.
+
+D. Readable → The submit handler now reads almost like plain English.
+
+*/
+const validations = {
+  firstName: {
+    input: firstName,
+    error: document.querySelector("#first_name_error"),
+    validate: (el) => !el.validity.valueMissing,
+  },
+  lastName: {
+    input: lastName,
+    error: document.querySelector("#last_name_error"),
+    validate: (el) => !el.validity.valueMissing,
+  },
+  email: {
+    input: email,
+    error: document.querySelector("#email_error"),
+    validate: (el) => !el.validity.valueMissing && isEmailValid(),
+  },
+  queryType: {
+    input: queryTypes,
+    error: document.querySelector("#query_type_error"),
+    validate: () => isQueryTypeSelected(),
+  },
+  message: {
+    input: message,
+    error: document.querySelector("#message_error"),
+    validate: (el) => !el.validity.valueMissing,
+  },
+  consent: {
+    input: consent,
+    error: document.querySelector("#consent_error"),
+    validate: (el) => el.checked,
+  },
+};
+
 const showError = () => {
-  errorMsgs.forEach((err) => {
-    err.classList.add("hidden"); // reset classlist
-    if (email.validity.valueMissing || !isEmailValid()) {
-      email.setAttribute("aria-invalid", true);
-      err.id === "email_error" && err.classList.remove("hidden");
-      email.classList.add("border-[#f25f3cff]")
-    }
-    if (firstName.validity.valueMissing) {
-      firstName.setAttribute("aria-invalid", true);
-      err.id === "first_name_error" && err.classList.remove("hidden");
-      firstName.classList.add("border-[#f25f3cff]")
-    }
-    if (lastName.validity.valueMissing) {
-      lastName.setAttribute("aria-invalid", true);
-      err.id === "last_name_error" && err.classList.remove("hidden");
-      lastName.classList.add("border-[#f25f3cff]")
-    }
-    if (message.validity.valueMissing) {
-      message.setAttribute("aria-invalid", true);
-      err.id === "message_error" && err.classList.remove("hidden");
-      message.classList.add("border-[#f25f3cff]")
-    }
+  Object.values(validations).forEach(({ input, error, validate }) => {
+    const valid = validate(input);
 
-    if (!consent.validity.valid) {
-      consent.setAttribute("aria-invalid", true);
-      err.id === "consent_error" && err.classList.remove("hidden");
-    }
-
-    if (!isQueryTypeSelected()) {
-      err.id === "query_type_error" && err.classList.remove("hidden");
+    if (!valid) {
+      error.classList.remove("hidden");
+      input?.classList?.add("error-border");
+      input?.setAttribute?.("aria-invalid", true);
+    } else {
+      error.classList.add("hidden");
+      input?.classList?.remove("error-border");
+      input?.removeAttribute?.("aria-invalid");
     }
   });
 };
 
 const isFormValid = () => {
-  showError();
-  return !Array.from(errorMsgs).some(
-    (err) => !err.classList.contains("hidden")
-  );
+  let allValid = true;
+
+  Object.values(validations).forEach(({ input, error, validate }) => {
+    const valid = validate(input);
+    if (!valid) {
+      allValid = false;
+    }
+  });
+
+  showError(); // update the UI after checking validity
+  return allValid;
 };
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  // Handle form submission
+
   if (isFormValid()) {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    SuccessMsg.classList.remove("hidden");
-    SuccessMsg.classList.add("grid");
+    successMsg.classList.remove("hidden");
+    successMsg.classList.add("grid");
     form.reset();
 
     setTimeout(() => {
-      SuccessMsg.classList.add("hidden");
-      SuccessMsg.classList.remove("grid");
+      successMsg.classList.add("hidden");
+      successMsg.classList.remove("grid");
     }, 3000);
   }
 });
