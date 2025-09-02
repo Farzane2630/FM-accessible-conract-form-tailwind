@@ -19,7 +19,7 @@
 
   <div id="success-message" class="bg-[#2b4246ff] rounded-lg sm:max-w-[25em] p-4 gap-2 text-start absolute top-2 hidden">
     <section class="title flex items-center gap-2">
-      <img src="./assets/images/icon-success-check.svg">
+      <img src="./assets/images/icon-success-check.svg" alt="">
       <h2 class="text-lg font-semibold text-white">Message Sent!</h2>
     </section>
     <p class="text-white">Thanks for completing the form. We'll be in touch soon!</p>
@@ -34,7 +34,7 @@
               <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
                 <use xlink:href="#required"></use>
               </svg>
-              <div class="sr-only">required</div>
+              <span class="sr-only">required</span>
             </label>
             <input
               required
@@ -58,7 +58,7 @@
               <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
                 <use xlink:href="#required"></use>
               </svg>
-              <div class="sr-only">required</div>
+              <span class="sr-only">required</span>
             </label>
             <input
               required
@@ -84,7 +84,7 @@
             <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
               <use xlink:href="#required"></use>
             </svg>
-            <div class="sr-only">required</div>
+            <span class="sr-only">required</span>
           </label>
           <input
             required
@@ -115,7 +115,6 @@
           <div id="inputs_wrapper" class="grid sm:grid-cols-2 gap-4">
             <!-- General Enquiry -->
             <label
-              for="general_enquiry"
               class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
             >
               <input
@@ -130,7 +129,6 @@
 
             <!-- Support Request -->
             <label
-              for="support_request"
               class="flex cursor-pointer items-center gap-2 border border-[#87a3a6ff] rounded-lg p-2 w-full peer-checked:bg-[#dff1e7ff] focus-within:bg-[#dff1e7ff] focus-within:outline focus-within:outline-[#0c7d69ff]"
             >
               <input
@@ -155,7 +153,7 @@
             <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
               <use xlink:href="#required"></use>
             </svg>
-            <div class="sr-only">required</div>
+            <span class="sr-only">required</span>
           </label>
           <textarea
             required
@@ -182,7 +180,7 @@
             <svg class="w-1.5 h-1.5 fill-[#0c7d69ff]" focusable="false">
               <use xlink:href="#required"></use>
             </svg>
-            <div class="sr-only">required</div>
+            <span class="sr-only">required</span>
           </label>
         </div>
         <div aria-live="polite" id="consent_error" class="errorMsg hidden text-[#ff3939]"
