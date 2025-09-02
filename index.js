@@ -82,7 +82,8 @@ const showError = () => {
 const isFormValid = () => {
   let allValid = true;
 
-  Object.values(validations).forEach(({ input, error, validate }) => {
+  // see README.md file to know more about Object.values() : What Ilearned number 6/
+  Object.values(validations).forEach(({ input, validate }) => {
     const valid = validate(input);
     if (!valid) {
       allValid = false;

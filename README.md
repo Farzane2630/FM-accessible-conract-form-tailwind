@@ -180,6 +180,28 @@ const isFormValid = () => {
   );
 };
 
+6. What does Object.values() do?
+
+It takes an object and returns an array of its values (ignores the keys).
+
+Example:
+
+```
+const person = { name: "Farzaneh", age: 28, country: "Iran" };
+console.log(Object.values(person));
+// 👉 ["Farzaneh", 28, "Iran"]
+```
+
+So instead of looping over the keys, you’re looping over the values directly.
+
+🔍 When to use Object.values()?
+
+✅ When you don’t care about the keys and just need to work with the values.
+
+✅ When your object is more like a dictionary (keys are labels, values are the real data).
+
+✅ Makes iteration cleaner than Object.keys() and then looking up obj[key].
+
 ### Continued development
 
 Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
