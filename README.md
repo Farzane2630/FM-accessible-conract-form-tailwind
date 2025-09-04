@@ -1,6 +1,6 @@
 # Frontend Mentor - Contact form solution
 
-This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -15,7 +15,6 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
 
 ## Overview
 
@@ -58,15 +57,13 @@ Users should be able to:
 - Tailwindcss
 - Javascript
 
-
 ### What I learned
 
 1. Radios in the same group (name="...") don’t each get a separate Tab stop — they act as a single control.
-You use arrow keys to switch between them. This is expected and correct for accessibility.
-
+   You use arrow keys to switch between them. This is expected and correct for accessibility.
 
 2. When trying to make the whole box clickable + keyboard accessible so that when it’s selected, the background changes (green) and the radio becomes checked.
-You need to:
+   You need to:
 
 - Use peer on the <input type="radio">
 
@@ -113,6 +110,7 @@ You need to:
   </div>
 </fieldset>
 ```
+
 3. accent-[#0c7d69ff] → makes the radio dot green.
 
 4. Key Accessibility Point: aria-live
@@ -123,7 +121,7 @@ If you wrap error messages in a container with aria-live="polite", the screen re
 
 "polite" means: wait until the user has finished speaking before reading the message (so it’s not disruptive).
 
-🛠 Example: 
+🛠 Example:
 
 ```
     <!-- Error message container (hidden initially) -->
@@ -167,15 +165,15 @@ Sighted users see red text (once you style .error { color: red; }).
 
 Screen reader users hear the message when it appears.
 
-5. To check if form is valid: 
+5. To check if form is valid:
 
 ! use case of "some" method !
 
 const isFormValid = () => {
-  showError();
-  return !Array.from(errorMsgs).some(
-    (err) => !err.classList.contains("hidden")
-  );
+showError();
+return !Array.from(errorMsgs).some(
+(err) => !err.classList.contains("hidden")
+);
 };
 
 6. What does Object.values() do?
@@ -204,8 +202,12 @@ So instead of looping over the keys, you’re looping over the values directly.
 
 Storing and transforming data using api
 
-### Useful resources
+```
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
+```
 
+### Useful resources
 
 ## Author
 
@@ -213,7 +215,4 @@ Storing and transforming data using api
 - Frontend Mentor - [@Farzane2630](https://www.frontendmentor.io/profile/Farzane2630)
 - StackOverflow - [@farzane-kazemi](https://stackoverflow.com/users/19888516/farzane-kazemi)
 
-
 ## Acknowledgments
-
-
