@@ -5,7 +5,6 @@ const email = document.querySelector("#email");
 const queryTypes = document.querySelectorAll("[name='query_type']");
 const message = document.querySelector("#message");
 const consent = document.querySelector("#consent");
-const successMsg = document.querySelector("#success-message");
 
 const isEmailValid = () => {
   const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -99,10 +98,11 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
   console.log(data);
-  
 
   if (isFormValid()) {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    const successMsg = document.querySelector("#success-message");
+
     successMsg.classList.remove("hidden");
     successMsg.classList.add("grid");
     form.reset();
